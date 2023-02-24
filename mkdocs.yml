@@ -60,3 +60,24 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
 
+nav:
+  - Descripción general:
+    - index.md
+  - Instalación:
+    - install/index.md
+    - Contenedores:
+      - install/contenedores/index.md
+      - Imágenes oficiales:
+        - install/contenedores/official-images/index.md
+        - plone/plone-backend: install/contenedores/official-images/plone-backend.md
+        - plone/plone-frontend: install/contenedores/official-images/plone-frontend.md
+        - plone/plone-zeo: install/contenedores/official-images/plone-zeo.md
+      - Ejemplos Plone 6 usando contenedores:
+        - install/contenedores/examples/index.md
+        - Contenedor ejemplo con nginx, Frontend, Backend y Volto: install/contenedores/examples/nginx-volto-plone.md
+        - nginx-volto-plone-zeo: install/contenedores/examples/nginx-volto-plone-zeo.md
+        - nginx-volto-plone-postgresql: install/contenedores/examples/nginx-volto-plone-postgresql.md
+        - nginx-plone: install/contenedores/examples/nginx-plone.md
+        - haproxy-plone-zeo: install/contenedores/examples/haproxy-plone-zeo.md
+    - Instalar usando los paquetes:
+      - install/paquetes/index.md

@@ -52,8 +52,8 @@ docker stop plone6-backend && docker rm plone6-backend
 
 ## Próximos pasos
 
-Conozca las [Imágenes oficiales](https://6.docs.plone.org/install/containers/images/index.html) mantenidas por la Comunidad Plone.
+Conozca las [Imágenes oficiales](official-images) mantenidas por la Comunidad Plone.
 
-También puede ver algunos [ejemplos](https://6.docs.plone.org/install/containers/examples/index.html) de cómo usar dichas imágenes oficiales para arrancar sus proyectos.
+También puede ver algunos [ejemplos](examples) de cómo usar dichas imágenes oficiales para arrancar sus proyectos.
 
 

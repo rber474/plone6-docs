@@ -1,7 +1,7 @@
 # Instalación
 
 En esta parte de la documentación, puede encontrar cómo probar Plone y cómo elegir un método de instalación si desea desarrollar en Plone.
-
+(install-containers-label)=
 ## Empezando
 
 !!! example "Qué desea hacer"
