@@ -1,7 +1,7 @@
 site_name: Documentación Plone v6.0
 use_directory_urls: true
-repo_url: https://github.com/rber474/plone6-documentation
-repo_name: rber474/plone6-documentation
+repo_url: https://github.com/rber474/plone6-docs
+repo_name: rber474/plone6-docs
 copyright: Copyright &copy; 2023 - 2027 Rafael Bermúdez Horcajada
 extra:
   generator: false
