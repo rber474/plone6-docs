@@ -81,3 +81,4 @@ nav:
         - haproxy-plone-zeo: install/contenedores/examples/haproxy-plone-zeo.md
     - Instalar usando los paquetes:
       - install/paquetes/index.md
+    - Gestionar complementos y paquetes: install/paquetes/gestionar-complementos.md
