@@ -336,7 +336,7 @@ http://localhost:3000
 Verá una página similar a esta
 
 <figure markdown>
-  ![Página de inicio de Plone](_static/plone-home-page.png){ width="300" }
+  ![Página de inicio de Plone](../../_static/plone-home-page.png){ width="300" }
   <figcaption>Página de inicio de Plone</figcaption>
 </figure>
 
@@ -348,7 +348,7 @@ Haga click en el enlace `Login` para acceder al formulario de login e introduzca
 
 
 <figure markdown>
-  ![Página de login de Plone](_static/plone-login-page.png){ width="300" }
+  ![Página de login de Plone](../../_static/plone-login-page.png){ width="300" }
   <figcaption>Página de login de Plone</figcaption>
 </figure>
 
