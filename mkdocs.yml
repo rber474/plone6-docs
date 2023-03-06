@@ -82,3 +82,12 @@ nav:
     - Instalar usando los paquetes:
       - install/paquetes/index.md
     - Gestionar complementos y paquetes: install/paquetes/gestionar-complementos.md
+    - Configuración de un entorno de desarrollo en Ubuntu WSL:
+        - install/desarrollo/index.md
+        - Instalar NGINX:
+          - install/desarrollo/instalar-nginx.md
+          - Cómo crear un certificado SSL auto firmado para Nginx: install/desarrollo/certificado-ssl-nginx.md
+        - Instalar Plone 6:
+          - install/desarrollo/instalar-plone.md
+          - Configurar NGINX para servir Plone con Varnish: install/desarrollo/nginx-reverse-proxy-varnish-plone.md
+          
