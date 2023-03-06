@@ -27,7 +27,8 @@
     libgtk-3-dev \
     libgtksourceview-3.0-dev \
     libpcap-dev \
-    python-docutils
+    python-docutils\
+    libaio1
     ```
 
 ### Instalar y activar OpenSSH-Server
@@ -83,3 +84,99 @@ Para asegurarnos que, en los proyectos de Plone 5, la versión que se usa es Pyt
 pyenv local 3.8.16
 ```
 Si bien, **siempre es aconsejable el uso de ``virtualenv``**
+
+### Instalar Oracle InstantClient 21.9.0
+
+A continuación, vamos a descargar e instalar ``Oracle InstantClient`` en Ubuntu. ``Oracle InstantClient`` es un software especial para usuarios Oracle que se utiliza para conectar al servidor Oracle.
+
+#### Descargamos y descomprimimos los archivos
+
+Descargaremos la utilidad ``Unzip``, el software de Oracle y crearemos las ruta de destino:
+
+``` shell
+sudo apt-get install unzip
+sudo mkdir ~/temp && cd $_
+sudo mkdir /opt/oracle
+sudo mkdir -p /opt/oracle/instantclient_12_2/network/admin
+sudo wget https://download.oracle.com/otn_software/linux/instantclient/219000/instantclient-basic-linux.x64-21.9.0.0.0dbru.zip
+sudo wget https://download.oracle.com/otn_software/linux/instantclient/219000/instantclient-sqlplus-linux.x64-21.9.0.0.0dbru.zip
+sudo unzip ~/temp/instantclient-basic-linux.x64-21.9.0.0.0dbru.zip -d /opt/oracle
+sudo unzip ~/temp/instantclient-sqlplus-linux.x64-21.9.0.0.0dbru.zip -d /opt/oracle
+```
+
+#### Configurar SQLPlus
+
+``SQLPlus`` es una utilidad de comandos en línea que puede ser usada para conectar y gestionar bases de datos Oracle. En este paso, configuraremos el path de la librería LD. Añadiremos estas dos líneas a perfil del usuario:
+
+`` shell
+nano ~/.profile
+``
+Y copiaremos estas líneas al final del archivo:
+
+``` cfg title="~/.profile"
+export PATH="$PATH:/opt/oracle/instantclient_21_9"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/oracle/instantclient_21_9"
+```
+
+Y probaremos la conexión:
+
+``` shell
+sqlplus dhani@192.168.100.62/pdb
+```
+
+``` Output
+SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 6 15:04:01 2023
+Version 21.9.0.0.0
+
+Copyright (c) 1982, 2022, Oracle.  All rights reserved.
+
+Enter password: 
+```
+Para salir, presione ++ctrl+c++ y luego ++enter++
+
+### Creación del tnsnames.ora
+Ahora crearemos el archivo ``tnsnames.ora``, necesario para configurar el servicio ``DWEB``
+
+``` shell
+sudo mkdir -p /opt/oracle/instantclient_12_2/network/admin
+sudo nano /opt/oracle/instantclient_12_2/network/admin/tnsnames.ora
+```
+
+Y copiaremos el siguiente contenido:
+
+``` cfg title="tnsnames.ora"
+DWEB =
+(DESCRIPTION =
+    (ADDRESS =
+        (PROTOCOL = TCP)
+        (HOST = $(hostname).local)
+        (PORT = 1559)
+    )
+    (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SID = DWEB)
+    )
+)
+```
+Guardamos y salimos: ++ctrl+o++ ++ctrl+x++
+
+Probamos la conexión, **sustituyendo ``<username>`` por el usuario y ``<password>`` por la clave**:
+
+``` shell
+sqlplus <username>/<password>@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP) (HOST = $(hostname).local) (PORT = 1559) ) (CONNECT_DATA = (SERVER = DEDICATED) (SID = DWEB) ) )
+```
+
+``` output
+SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 6 17:31:08 2023
+Version 21.9.0.0.0
+
+Copyright (c) 1982, 2022, Oracle.  All rights reserved.
+
+Hora de Ultima Conexion Correcta: Lun Mar 06 2023 17:29:42 +01:00
+
+Conectado a:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.10.0.0.0
+
+SQL>
+```

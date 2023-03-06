@@ -64,6 +64,12 @@ add_header X-Content-Type-Options "nosniff";
 # add_header Content-Security-Policy "default-src 'self'; img-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'";
 add_header Content-Security-Policy-Report-Only "default-src 'self'; img-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'";
 
+# This specifies which IP and port Plone is running on.
+# The default is 127.0.0.1:8080
+upstream weppor {
+    server 127.0.0.1:8080;
+}
+
 server {
         listen 443 ssl;
         listen [::]:443 ssl;
@@ -74,17 +80,20 @@ server {
         index index.html index.htm index.nginx-debian.html;
 
         server_name weppor.desarrollo www.weppor.desarrollo;
-
         location / {
-                rewrite ^/(.*)$ /VirtualHostBase/https/weppor.desarrollo:443/empleado/VirtualHostRoot/$1 break;
-                proxy_pass http://127.0.0.1:10050/;
+                # try_files $uri $uri/ =404;
+                # proxy_pass http://weppor/VirtualHostBase/http/weppor.desarrollo:443/empleado/VirtualHostRoot/;
+                # rewrite ^/(.*)$ /VirtualHostBase/https/weppor.desarrollo:443/empleado/VirtualHostRoot/$1 break;
+                proxy_pass http://project_cache//VirtualHostBase/https/weppor.desarrollo:443/empleado/VirtualHostRoot/;
                 proxy_set_header        Host            $host;
                 proxy_set_header        X-Real-IP       $remote_addr;
                 proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
         }
         location /gestorz {
-                rewrite ^/(.*)$ /VirtualHostBase/https/weppor.desarrollo:443/empleado/VirtualHostRoot/$1 break;
-                proxy_pass http://127.0.0.1:10050/;
+                # try_files $uri $uri/ =404;
+                # proxy_pass http://weppor/VirtualHostBase/http/weppor.desarrollo:443/empleado/VirtualHostRoot/;
+                # rewrite ^/(.*)$ /VirtualHostBase/https/weppor.desarrollo:443/empleado/VirtualHostRoot/$1 break;
+                proxy_pass http://project_cache//VirtualHostBase/https/weppor.desarrollo:443/empleado/VirtualHostRoot/;
                 proxy_set_header        Host            $host;
                 proxy_set_header        X-Real-IP       $remote_addr;
                 proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -99,6 +108,10 @@ server {
     return 302 https://$server_name$request_uri;
 }
 
+# Cache (Varnish)
+upstream project_cache {
+    server 127.0.0.1:10050;
+}
 ```
 Guarda la configuración:
 
