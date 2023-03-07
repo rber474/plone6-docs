@@ -352,5 +352,14 @@ sudo systemctl restart nginx
 
 Después del reinicio, se implementarán los cambios y su redirección ahora es permanente.
 
+!!! tip "Arrancar los servicios cuando se levante Ubuntu"
+
+    Para levantar NGINX, es necesario incluir el servicio en el arranque del sistema:
+
+    ``` shell
+    sudo update-rc.d nginx defaults
+    ```
+    De este modo, siempre dispondrás del NGINX tras un reinicio.
+
 ### Conclusión
 Configuró su servidor Nginx para usar un cifrado fuerte para las conexiones de los clientes. Esto le permitirá atender las solicitudes de forma segura y evitará que terceros externos lean su tráfico. Como alternativa, puede optar por utilizar un certificado SSL autofirmado que se puede obtener de Let's Encrypt, una autoridad de certificación que instala certificados TLS/SSL gratuitos y habilita HTTPS cifrado en servidores web. Obtenga más información de nuestro tutorial sobre [Cómo proteger Nginx con Let's Encrypt en Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04).
