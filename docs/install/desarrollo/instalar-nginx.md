@@ -73,7 +73,7 @@ sudo ufw allow ssh
 ## 3. Comprobar el servidor WEB
 
 ``` shell
-service nginx status
+sudo service nginx status
 ```
 
 Si la salida es cómo esta
@@ -110,15 +110,15 @@ Deberías ver una pantalla de bienvenida a NGINX
 !!! info "Comandos útiles de NGINX"
     - Para detener el servicio:
         ``` shell
-        sudo systemctl stop nginx
+        sudo service stop nginx
         ```
     - Para arrancar el servicio:
         ``` shell
-        sudo systemctl start nginx
+        sudo service start nginx
         ```
     - Para reiniciar el servicio:
         ``` shell
-        sudo systemctl restart nginx
+        sudo service restart nginx
         ```
 
 ## 5. Configurar Server Blocks

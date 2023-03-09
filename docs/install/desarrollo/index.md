@@ -1,5 +1,23 @@
 # Instalación en Ubuntu WSL
 
+## Cómo solucionar 'System has not been booted with systemd' error?
+La respuesta simple es no utilizar el comando systemctl. En vez de eso, puedes usar el comando sysvinit equivalente.
+
+No es complicado y ambos comandos tienen síntaxis similar.
+
+Esta tabla debería serte de ayuda.
+
+!!! tip "Equivalencias de comandos entre Systemd y Sysvinit"
+
+    | **Comando Systemd**            | **Comando Sysvinit**         |
+    |--------------------------------|------------------------------|
+    | systemctl start service_name   | service service_name start   |
+    | systemctl stop service_name    | service service_name stop    |
+    | systemctl restart service_name | service service_name restart |
+    | systemctl status service_name  | service service_name status  |
+    | systemctl enable service_name  | chkconfig service_name on    |
+    | systemctl disable service_name | chkconfig service_name off   |
+
 ## Instalación de las dependencias
 
 ### Dependencias del SO

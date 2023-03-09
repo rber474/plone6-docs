@@ -298,7 +298,7 @@ Fíjate en la advertencia al principio. Como se señaló anteriormente, esta con
 Si su salida coincide con nuestro ejemplo, su archivo de configuración no tiene errores de sintaxis. Si este es el caso, puede reiniciar Nginx de manera segura para implementar los cambios:
 
 ``` shell
-sudo systemctl restart nginx
+sudo service restart nginx
 ```
 
 Ahora que el sistema se ha reiniciado con los nuevos cambios, puede continuar con la prueba.
@@ -347,7 +347,7 @@ sudo nginx -t
 Cuando esté listo, reinicie Nginx para que la redirección sea permanente:
 
 ``` shell
-sudo systemctl restart nginx
+sudo service restart nginx
 ```
 
 Después del reinicio, se implementarán los cambios y su redirección ahora es permanente.
