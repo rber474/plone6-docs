@@ -1,6 +1,4 @@
-# Tema ONCE THEME
-
-El tema principal para Plone 6 de ONCE será ``once.plone6theme``
+# Desarrollo de temas ClassicUI en Plone 6
 
 ## Dependencias
 Para poder personalizar y compilar los temas basados en DIAZO y el Barceloneta Theme es necesario tener instaladas algunas dependencias:
@@ -11,45 +9,6 @@ Para poder personalizar y compilar los temas basados en DIAZO y el Barceloneta T
 - **Yarn**
 
 Puedes consultar cómo realizar la instalación y las versiones necesarias en [Pre-requisitos para la instalación](../install/paquetes/index.md#pre-requisitos-para-la-instalacion)
-
-## Obtener el paquete once.plone6theme
-
-El paquete del tema principal para Plone 6 está ubicado en el repositorio ``WEB-COMMONS/once.plone6theme``
-
-Dentro del archivo ``instance-develop.cfg`` añadiremos el paquete tanto en la sección ``SOURCES`` como en la sección ``develop`` ``eggs``
-
-``` cfg title="instance-develop.cfg"
-[sources]
-once.plone6theme = git bitbucket.once.es:web-commons/once.plone6theme.git branch=master
-
-[develop]
-# development tools
-parts =
-    vscode
-
-eggs =
-    plone.reload
-    Products.PDBDebugMode
-    plone.app.debugtoolbar
-    Products.PrintingMailHost
-    pdbpp
-    z3c.saconfig
-    SQLAlchemy
-    once.plone6theme
-
-[versions]
-sqlalchemy = 1.4.46
-
-```
-
-Después de ejecutar el comando ``buildout`` el producto aparecéra como instalable en el **panel de control "Complementos"**:
-
-``` shell
-bin/buildout
-```
-
-Procede a su instalación.
-
 
 ## Servir, compilar y distribuir el tema
 
@@ -90,18 +49,7 @@ En el propio paquete del tema, en el archivo ``package.json``, están definidos 
 
 ```
 
-### Paso 1. Instalar las dependencias del tema
-
-Ejecute lo siguiente para instalar las dependencias con ``nvm`` y ``yarn``:
-
-``` shell
-cd ~/proyectos/weppor/src/once.plone6theme/src/once/plone6theme/theme
-yarn install
-```
-
-Esto creará un directorio ``node-modules`` con todas las dependencias necesarias. No te preocupes, este directorio está excluido del control de versiones ``.gitignore``
-
-### Paso 2. Activar el modo compilación online
+### Paso 1. Activar el modo compilación online
 
 Para ir compilando los archivos ``.scss`` y ``javascripts`` mientras se modifican los fuentes, puedes ejecutar:
 
@@ -138,7 +86,7 @@ npm run watch
 [nodemon] clean exit - waiting for changes before restart
 ```
 
-### Paso 3. Compilación definitiva
+### Paso 2. Compilación definitiva
 Para compilar de manera definitiva y así distribuir los cambios:
 
 ``` shell
