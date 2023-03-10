@@ -90,4 +90,5 @@ nav:
         - Instalar Plone 6:
           - install/desarrollo/instalar-plone.md
           - Configurar NGINX para servir Plone con Varnish: install/desarrollo/nginx-reverse-proxy-varnish-plone.md
-          
+  - Once theme:
+    - theming/index.md
