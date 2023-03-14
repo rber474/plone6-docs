@@ -90,6 +90,8 @@ nav:
         - Instalar Plone 6:
           - install/desarrollo/instalar-plone.md
           - Configurar NGINX para servir Plone con Varnish: install/desarrollo/nginx-reverse-proxy-varnish-plone.md
-  - Desarrollo de temas ClassicUI en Plone 6:
-    - theming/index.md
-    - once.plone6theme: theming/once.plone6theme.md
+        - Acceso al repositorio con ssh: install/desarrollo/ssh-access.md
+  - Desarrollo:
+    - Desarrollo de temas ClassicUI en Plone 6:
+      - theming/index.md
+      - once.plone6theme: theming/once.plone6theme.md
