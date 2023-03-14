@@ -37,3 +37,27 @@ El archivo ``~/.ssh/id_rsa.pub`` contiene la contiene la clave pública que ya p
 Sólo tienes que copiar el contenido y crear una clave ssh desde tu cuenta de Github, BitBucket o Gitlab.
 
 
+## Configurar el acceso al repositorio con ``~/.ssh/config``
+
+Vamos ahora a configurar el acceso al repositorio para que nuestro ``Plone`` pueda descargar los paquetes usando ``git-ssh``
+Para ello vamos a crear un archivo ``~/.ssh/config``:
+
+``` shell
+nano ~/.ssh/config
+```
+
+y vamos a pegar y editar este contenido:
+
+``` cfg title="~/.ssh/config"
+Host <dominio-del-repositorio>
+    Port <port>
+    User <username>
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/id_rsa
+    StrictHostKeyChecking no
+```
+
+
+## Conclusión
+
+En este capítulo hemos aprendido a crear y configurar el acceso ``.ssh`` para poder obtener los repositorios por ese protocolo.
