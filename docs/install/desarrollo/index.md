@@ -45,7 +45,7 @@ Esta tabla debería serte de ayuda.
     libgtk-3-dev \
     libgtksourceview-3.0-dev \
     libpcap-dev \
-    python-docutils\
+    python-docutils \
     libaio1
     ```
 
