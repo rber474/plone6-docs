@@ -118,7 +118,7 @@ Deberías ver una pantalla de bienvenida a NGINX
         ```
     - Para reiniciar el servicio:
         ``` shell
-        sudo service restart nginx
+        sudo service nginx restart
         ```
 
 ## 5. Configurar Server Blocks
