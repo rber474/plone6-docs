@@ -4,16 +4,16 @@ hide:
 ---
 
 T|Estado|Pendiente|class:pending|
-L|:simple-bitbucket:|https://bitbucket.once.es/projects/WEB-PORTAL/repos/biblioteca.tiflologica|
-# biblioteca.tiflologica
+L|:simple-bitbucket:|https://bitbucket.once.es/projects/WEB-PORTAL/repos/bibliotecas.estadisticas|
+# bibliotecas.estadisticas
 
 
 ## Repositorios
 
 | Repositorio                  | URL                                                                                 |
 | ---------------------------- | ----------------------------------------------------------------------------------- |
-| :simple-subversion: SVN      | [biblioteca.tiflologica](https://evosvn.evonceib.local/svn/webs/empleado/biblioteca.tiflologica)  |
-| :simple-bitbucket: Bitbucket | [biblioteca.tiflologica](ssh://git@bitbucket.once.es:7999/web-portal/biblioteca.tiflologica.git)  |
+| :simple-subversion: SVN      | [bibliotecas.estadisticas](https://evosvn.evonceib.local/svn/webs/empleado/bibliotecas.estadisticas)  |
+| :simple-bitbucket: Bitbucket | [bibliotecas.estadisticas](ssh://git@bitbucket.once.es:7999/web-portal/bibliotecas.estadisticas.git)  |
 
 ## Descripción
 
