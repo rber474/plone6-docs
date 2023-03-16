@@ -122,7 +122,7 @@ Guarda la configuración:
 Antes de aplicar los cambios, vamos a comprobar que no tengamos errores:
 
 ``` shell
-sudo nano nginx -t
+sudo nginx -t
 ```
 
 Si todo es correcto, reiniciamos Nginx:
