@@ -3,14 +3,14 @@
 ## Introducción
 
 En la sección [Instalar NGINX](instalar-nginx.md), vimos cómo realizar la instalación y configuración de nuestro NGINX pero aún no está configurado para servir nuestro sitio plone `WEPPOR`.
-Para ello, vamos a modificar el archivo ``/etc/nginx/sites-availables/``.
+Para ello, vamos a modificar el archivo ``/etc/nginx/sites-available/``.
 
 ## Paso 1. Copia de seguridad
 
 Vamos a copiar la configuración actual, por si tenemos que volver a ella. Para ello, tecleamos:
 
 ``` shell
-sudo cp /etc/nginx/sites-availables/weppor.desarrollo /etc/nginx/sites-availables/weppor.desarrollo.bak
+sudo cp /etc/nginx/sites-available/weppor.desarrollo /etc/nginx/sites-available/weppor.desarrollo.bak
 ```
 
 !!! warning "Aviso"
@@ -18,9 +18,9 @@ sudo cp /etc/nginx/sites-availables/weppor.desarrollo /etc/nginx/sites-available
 
 ## Paso 2. Modificar la configuración
 
-En el archivo ``/etc/nginx/sites-availables/weppor.desarrollo`` tenemos esta configuración:
+En el archivo ``/etc/nginx/sites-available/weppor.desarrollo`` tenemos esta configuración:
 
-``` nginx title="/etc/nginx/sites-availables/weppor.desarrollo"
+``` nginx title="/etc/nginx/sites-available/weppor.desarrollo"
 server {
         listen 443 ssl;
         listen [::]:443 ssl;
@@ -49,12 +49,12 @@ server {
 Y lo vamos a sustituir por esto:
 
 ``` shell
-sudo nano /etc/nginx/sites-availables/weppor.desarrollo
+sudo nano /etc/nginx/sites-available/weppor.desarrollo
 ```
 
 Añadiremos cabeceras para securizar las peticiones y haremos un **proxy-pass** al ``varnish``, donde se devolverá la petición si está cacheada o este redireccionará la petición al backend de zope para que se procese.
 
-``` nginx title="/etc/nginx/sites-availables/weppor.desarrollo"
+``` nginx title="/etc/nginx/sites-available/weppor.desarrollo"
 
 # This adds security headers
 add_header X-Frame-Options "SAMEORIGIN";
