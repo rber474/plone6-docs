@@ -126,9 +126,15 @@ sudo unzip ~/temp/instantclient-sqlplus-linux.x64-21.9.0.0.0dbru.zip -d /opt/ora
 
 ``SQLPlus`` es una utilidad de comandos en línea que puede ser usada para conectar y gestionar bases de datos Oracle. En este paso, configuraremos el path de la librería LD. Añadiremos estas dos líneas a perfil del usuario:
 
-`` shell
+``` shell
 nano ~/.profile
-``
+```
+
+Recargamos el perfil
+``` shell
+source ~/.profile
+```
+
 Y copiaremos estas líneas al final del archivo:
 
 ``` cfg title="~/.profile"
