@@ -15,4 +15,34 @@
     -webkit-mask-image: var(--md-admonition-icon--todo);
             mask-image: var(--md-admonition-icon--todo);
   }
-  
+
+p:has(> span.badge-group) {
+  position: relative;
+  float: right;
+  top: -10px;
+}
+
+.badge {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 0.8em;
+  box-shadow: #d1d4d4 1px 1px 4px 1px;
+}
+.badge.migrated .title {
+  background-color: transparent;
+  border: 1px solid #4cae4f;
+  color: #4cae4f;
+}
+.badge.migrated .value {
+    background-color: #4cae4f;
+}
+
+.badge.pending .title {
+    background-color: transparent;
+    border: 1px solid #ff1744;
+    color: #ff1744;
+}
+
+.badge.pending .value {
+  background-color: #ff1744;
+}

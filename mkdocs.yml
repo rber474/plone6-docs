@@ -59,7 +59,10 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-
+plugins:
+  - badges
+  - tags:
+      tags_file: tags.md
 nav:
   - Descripción general:
     - index.md
@@ -95,3 +98,10 @@ nav:
     - Desarrollo de temas ClassicUI en Plone 6:
       - theming/index.md
       - once.plone6theme: theming/once.plone6theme.md
+  - Migración:
+    - Productos:
+      - biblioteca.site: migracion/productos/biblioteca.site.md
+      - biblioteca.termino: migracion/productos/biblioteca.termino.md
+      - biblioteca.tiflologica: migracion/productos/biblioteca.tiflologica.md
+      - bibliotecas.estadisticas: migracion/productos/bibliotecas.estadisticas.md
+  - Tags: tags.md
