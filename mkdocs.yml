@@ -104,4 +104,5 @@ nav:
       - biblioteca.termino: migracion/productos/biblioteca.termino.md
       - biblioteca.tiflologica: migracion/productos/biblioteca.tiflologica.md
       - bibliotecas.estadisticas: migracion/productos/bibliotecas.estadisticas.md
+      - portal.theme: migracion/productos/portal.theme.md
   - Tags: tags.md
