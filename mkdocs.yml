@@ -105,4 +105,7 @@ nav:
       - biblioteca.tiflologica: migracion/productos/biblioteca.tiflologica.md
       - bibliotecas.estadisticas: migracion/productos/bibliotecas.estadisticas.md
       - portal.theme: migracion/productos/portal.theme.md
+      - collective.comunicacionesonce: migracion/productos/collective.comunicacionesonce.md
+      - collective.knosys: migracion/productos/collective.knosys.md
+      - collective.consumer.redis: migracion/productos/collective.consumer.redis.md
   - Tags: tags.md

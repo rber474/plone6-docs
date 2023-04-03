@@ -17,7 +17,7 @@ L|:simple-bitbucket:|https://bitbucket.once.es/projects/WEB-PORTAL/repos/portal.
 
 ## Descripción
 
-Paquete de estadísticas para bibliotecas
+Paquete del Theme del portal
 
 
 !!! warning "Atención"
@@ -27,6 +27,10 @@ Paquete de estadísticas para bibliotecas
 
 ## Migración
 
+### portalTool
+
+Migración a HelperView
+DetectMobileBrowser -> Mirar si es necessaria
 
 ### Tipos de contenido
 
