@@ -115,7 +115,7 @@ Descargaremos la utilidad ``Unzip``, el software de Oracle y crearemos las ruta 
 sudo apt-get install unzip
 sudo mkdir ~/temp && cd $_
 sudo mkdir /opt/oracle
-sudo mkdir -p /opt/oracle/instantclient_12_2/network/admin
+sudo mkdir -p /opt/oracle/instantclient_21_9/network/admin
 sudo wget https://download.oracle.com/otn_software/linux/instantclient/219000/instantclient-basic-linux.x64-21.9.0.0.0dbru.zip
 sudo wget https://download.oracle.com/otn_software/linux/instantclient/219000/instantclient-sqlplus-linux.x64-21.9.0.0.0dbru.zip
 sudo unzip ~/temp/instantclient-basic-linux.x64-21.9.0.0.0dbru.zip -d /opt/oracle
@@ -162,8 +162,8 @@ Para salir, presione ++ctrl+c++ y luego ++enter++
 Ahora crearemos el archivo ``tnsnames.ora``, necesario para configurar el servicio ``DWEB``
 
 ``` shell
-sudo mkdir -p /opt/oracle/instantclient_12_2/network/admin
-sudo nano /opt/oracle/instantclient_12_2/network/admin/tnsnames.ora
+sudo mkdir -p /opt/oracle/instantclient_21_9/network/admin
+sudo nano /opt/oracle/instantclient_21_9/network/admin/tnsnames.ora
 ```
 
 Y copiaremos el siguiente contenido:
